@@ -1,0 +1,36 @@
+plugins {
+    id 'groovy'
+    id 'java-gradle-plugin'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.apache.groovy:groovy:4.0.6'
+
+    testImplementation gradleTestKit()
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.0'
+    testImplementation('org.spockframework:spock-core:2.3-groovy-3.0') {
+        exclude group: 'org.codehaus.groovy'
+    }
+
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.9.0'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+gradlePlugin {
+    plugins {
+        simplePlugin {
+            id = 'org.example.greeting'
+            implementationClass = 'org.example.GreetingPlugin'
+        }
+    }
+}
