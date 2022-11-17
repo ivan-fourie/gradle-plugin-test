@@ -9,11 +9,10 @@ class GreetingPluginFunctionalTest extends Specification {
     File settingsFile
     File buildFile
 
+
     def setup() {
         settingsFile = new File(testProjectDir, 'settings.gradle')
         buildFile = new File(testProjectDir, 'build.gradle')
-
-        //GradleRunner.withDebug(true)
     }
 
     def "greeting plugin prints 'Hello from the org.example.GreetingPlugin'"() {

@@ -28,9 +28,13 @@ test {
 
 gradlePlugin {
     plugins {
-        simplePlugin {
+        greetingPlugin {
             id = 'org.example.greeting'
             implementationClass = 'org.example.GreetingPlugin'
+        }
+        printConfigPropertiesPlugin {
+            id = 'org.example.print-config-properties'
+            implementationClass = 'org.example.PrintConfigPropertiesPlugin'
         }
     }
 }
